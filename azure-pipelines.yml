@@ -52,4 +52,6 @@ stages:
             --name my-container-app \
             --resource-group $1 \
             --image $2 \
-            --environment $3
+            --environment $3 \
+            --ingress 'external' \
+            --target-port 80

@@ -45,7 +45,7 @@ stages:
         azureSubscription: 'Visual Studio Ultimate with MSDN(7e6ec17f-2abc-4559-a23d-f6520cbb89a6)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
-        arguments: '$(acaResourceGroup) $(containerRegistry)/$(imageRepository) $(acaEnvironment)'
+        arguments: '$(acaResourceGroup) $(containerRegistry)/$(imageRepository):$(Build.BuildId) $(acaEnvironment)'
         inlineScript: |
           az extension add --source https://workerappscliextension.blob.core.windows.net/azure-cli-extension/containerapp-0.2.2-py2.py3-none-any.whl --yes
           az containerapp create \
